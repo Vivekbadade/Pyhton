@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener Stats</title>
+</head>
+<body>
+    <h1>URL Shortener Stats</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Short Code</th>
+                <th>Original URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for short_code, original_url in urls %}
+            <tr>
+                <td><a href="{{ url_for('redirect_to_url', short_code=short_code) }}" target="_blank">{{ url_for('redirect_to_url', short_code=short_code) }}</a></td>
+                <td><a href="{{ original_url }}" target="_blank">{{ original_url }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

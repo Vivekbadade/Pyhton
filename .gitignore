@@ -1,0 +1,4 @@
+.env
+url_shortener.db
+expense.db
+__pycache__/
